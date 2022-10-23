@@ -1,4 +1,5 @@
 # blog-to-cohost
+
 bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to automate posting blog posts to cohost
 
 ## System requirements
@@ -6,6 +7,7 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 - Linux (Windows may work but is not tested)
 - Python
 - Pip
+- Bash
 - Docker (optional)
 
 ## Quicktstart
@@ -28,6 +30,7 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 
 <!-- steps here -->
 - `docker build -t blog-to-cohost .`
+
 ## Contributing
 
 <!-- TODO Add contributing guidelines -->
@@ -38,4 +41,4 @@ blog-to-cohost is licensed under the MIT License. The full license text is inclu
 
 This repo is built off [cohost.py](https://github.com/valknight/Cohost.py), a library for [cohost.org](https://cohost.org/)
 
-No part of this code is approved by [cohost](https://cohost.org/), this uses an **unofficial** API. 
+No part of this code is approved by [cohost](https://cohost.org/), this uses an **unofficial** API.
