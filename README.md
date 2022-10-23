@@ -6,10 +6,14 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 - Linux (Windows may work but is not tested)
 - Python
 - Pip
+- Docker (optional)
 
-## Development
+## Quicktstart
 
-- clone the repo
+- clone the repo from <https://github.com/CrimsonTome/blog-to-cohost>
+- `pip install -r requirements.txt` to install dependencies
+- edit `scripts/main.py` with your changes
+- `python3 scripts/main.py` to run
 <!-- more steps soon -->
 
 ## Building
@@ -18,10 +22,12 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 
 <!--  steps here -->
 
+- `python3 scripts/main.py`
+
 ### Docker
 
 <!-- steps here -->
-
+- `docker build -t blog-to-cohost .`
 ## Contributing
 
 <!-- TODO Add contributing guidelines -->
