@@ -2,8 +2,9 @@
 from cohost.models.user import User
 from cohost.models.block import AttachmentBlock, MarkdownBlock
 
-# import os for environment variable management
-import os
+
+# import os for environment variable management and sys for exiting upon exception
+import os, sys
 
 # set cookie in with below line bwlow, you will have to run again when you reload your shell. to get around this run the line below that and then reload your shell
 # export COOKIE="YOUR-TOKEN-HERE"
@@ -11,8 +12,13 @@ import os
 # see https://github.com/valknight/Cohost.py#tokens for how to get your token
 
 
-# import the cookie
-cookie = os.environ.get("COOKIE")
+#  try import the cookie, tells the user to set it if it does not exist
+try:  
+   cookie = os.environ.get("COOKIE")
+except KeyError: 
+   print ('Please set the environment variable COOKIE with export COOKIE="YOUR-TOKEN-HERE"')
+   sys.exit(1)
+
 
 # uncomment for testing purposes
 # print(cookie)
