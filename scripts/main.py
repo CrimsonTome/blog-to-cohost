@@ -3,8 +3,10 @@ from cohost.models.user import User
 from cohost.models.block import AttachmentBlock, MarkdownBlock
 
 
-# import os for environment variable management and sys for exiting upon exception
-import os, sys
+# import os.environ for environment variable management, sys for exiting upon exception and time.sleep to not overload cohost or your own site with requests
+from os import environ
+import sys
+from time import sleep
 
 # set cookie in with below line bwlow, you will have to run again when you reload your shell. to get around this run the line below that and then reload your shell
 # export COOKIE="YOUR-TOKEN-HERE"
@@ -14,7 +16,7 @@ import os, sys
 
 #  try import the cookie, tells the user to set it if it does not exist
 try:  
-   cookie = os.environ.get("COOKIE")
+   cookie = environ.get("COOKIE")
 except KeyError: 
    print ('Please set the environment variable COOKIE with export COOKIE="YOUR-TOKEN-HERE"')
    sys.exit(1)
