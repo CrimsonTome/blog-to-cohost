@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # import cohost library
 from cohost.models.user import User
 from cohost.models.block import AttachmentBlock, MarkdownBlock
@@ -63,6 +64,7 @@ while True:
    project = user.getProject('crimsontome427') # replace with your project name
    #if there's a new post on the blog and not on cohost already
    if postNum > feedLength:
+      feedLength+=1
       blocks = [
          # AttachmentBlock('pybug.png'), # References image file pybug.png
          # fill in some post data
@@ -73,10 +75,10 @@ while True:
       print('Check out your post at {}'.format(post.url))
 
       # increment the length and update the bashrc so *fingers crossed* it works more consistently
-      feedLength+=1
       environ["LENGTH"] = str(feedLength)
       file1 = open("/home/ctome/.bashrc", "a")  # append mode, replace with your bashrc location
       file1.write('export LENGTH="'+str(feedLength)+'"')
+      file1.write('')
       file1.close()
    else:
       print("no change")
