@@ -1,7 +1,15 @@
 # blog-to-cohost
 
 bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to automate posting blog posts to cohost
-
+- [blog-to-cohost](#blog-to-cohost)
+  - [System requirements](#system-requirements)
+  - [Quicktstart](#quicktstart)
+  - [Building](#building)
+    - [Python](#python)
+    - [Docker](#docker)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [License, Credits and Disclaimers](#license-credits-and-disclaimers)
 ## System requirements
 
 - Linux (Windows may work but is not tested)
@@ -30,6 +38,11 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 
 <!-- steps here -->
 - `docker build -t blog-to-cohost .`
+
+## Changelog
+
+Run ./changelog to generate the changelog after your commit, then git add . && git commit --amend --no-edit to generate the changelog
+The changelog is available [here](CHANGELOG.md)
 
 ## Contributing
 
