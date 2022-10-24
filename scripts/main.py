@@ -8,6 +8,7 @@ import sys
 from time import sleep
 import feedparser as fp
 
+# get number of posts
 try:  
    feedLength = environ.get("LENGTH")
 except KeyError: 
@@ -22,10 +23,12 @@ feedLength = int(feedLength)
 # fetch and parse the feed
 data = fp.parse("https://crimsontome.com/feed/feed.xml") # replace with your feed url
 
+# extract title, url and date from most recent post (0)
 title = data.entries[0].title
 url = data.entries[0].link
-date = data.entries[0].updated.split("T", 1)[0]
+date = data.entries[0].updated.split("T", 1)[0] # cut off date after yyyy-mm-dd - US date... 
 
+# extract number of posts from the feed. this is used to compare our local value, to check if there has been a post since we last posted to cohost
 postNum = len(data.entries)
 
 # print (title, url, date, postNum)
@@ -53,13 +56,18 @@ user = User.loginWithCookie(cookie)
 # for project in user.editedProjects:
 #     print(project) # Print all pages you have edit permissions for
 project = user.getProject('crimsontome427') # replace with your project name
+#if there's a new post on the blog and not on cohost already
 if postNum > feedLength:
     blocks = [
         # AttachmentBlock('pybug.png'), # References image file pybug.png
+        # fill in some post data
         MarkdownBlock("["+title+"]("+url+") Posted on: "+date)
     ]
+    # post it!
     post = project.post("Blog post #"+str(feedLength),blocks)
     print('Check out your post at {}'.format(post.url))
+
+    # increment the length and update the bashrc so *fingers crossed* it works more consistently
     feedLength+=1
     environ["LENGTH"] = str(feedLength)
     file1 = open("/home/ctome/.bashrc", "a")  # append mode, replace with your bashrc location
