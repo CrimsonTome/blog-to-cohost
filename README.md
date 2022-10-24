@@ -8,7 +8,7 @@ bot using [cohost.py](https://github.com/valknight/Cohost.py) and feedparser to 
 - Python
 - Pip
 - Bash
-- Docker (optional) - broken as of abfa1f6
+- Docker (optional) - broken as of [abfa1f6](https://github.com/CrimsonTome/blog-to-cohost/commit/abfa1f6c7debead66a1f6ebc14928d9abfac020a)
 
 ## Quicktstart
 
